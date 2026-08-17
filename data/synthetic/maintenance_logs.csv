@@ -1,0 +1,58 @@
+maintenance_id,machine_id,maintenance_date,maintenance_type,duration_hours,maintenance_cost,description
+MAINT_0001,M01,2025-02-02 02:00:00,Corrective,17,44482,Emergency replacement and restoration due to Spindle Bearing Seizure
+MAINT_0002,M01,2025-03-04 10:00:00,Corrective,11,40828,Emergency replacement and restoration due to Spindle Bearing Seizure
+MAINT_0003,M01,2025-04-04 14:00:00,Corrective,14,43118,Emergency replacement and restoration due to Spindle Bearing Seizure
+MAINT_0004,M01,2025-05-04 00:00:00,Corrective,13,38258,Emergency replacement and restoration due to Spindle Bearing Seizure
+MAINT_0005,M01,2025-06-04 04:00:00,Corrective,9,38117,Emergency replacement and restoration due to Spindle Bearing Seizure
+MAINT_0006,M02,2025-01-28 20:00:00,Corrective,13,51184,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0007,M02,2025-02-26 00:00:00,Corrective,18,45135,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0008,M02,2025-03-25 08:00:00,Corrective,15,44285,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0009,M02,2025-04-23 05:00:00,Corrective,6,46784,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0010,M02,2025-05-20 19:00:00,Corrective,16,49111,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0011,M02,2025-06-17 23:00:00,Corrective,15,50949,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0012,M03,2025-02-02 11:00:00,Corrective,13,46883,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0013,M03,2025-03-06 14:00:00,Corrective,11,51781,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0014,M03,2025-04-06 12:00:00,Corrective,7,51109,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0015,M03,2025-05-07 15:00:00,Corrective,8,44117,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0016,M03,2025-06-09 15:00:00,Corrective,11,51626,Emergency replacement and restoration due to Tool Holder Fatigue
+MAINT_0017,M04,2025-01-22 09:00:00,Corrective,13,67448,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0018,M04,2025-02-12 12:00:00,Corrective,18,67736,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0019,M04,2025-03-06 07:00:00,Corrective,16,62140,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0020,M04,2025-03-27 15:00:00,Corrective,8,65554,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0021,M04,2025-04-18 23:00:00,Corrective,7,61103,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0022,M04,2025-05-11 03:00:00,Corrective,10,62241,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0023,M04,2025-06-02 16:00:00,Corrective,7,65178,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0024,M04,2025-06-25 23:00:00,Corrective,9,62011,Emergency replacement and restoration due to Main Cylinder Seal Failure
+MAINT_0025,M05,2025-01-24 02:00:00,Corrective,8,38456,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0026,M05,2025-02-17 12:00:00,Corrective,13,38379,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0027,M05,2025-03-13 11:00:00,Corrective,11,38128,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0028,M05,2025-04-09 07:00:00,Corrective,14,34799,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0029,M05,2025-05-04 09:00:00,Corrective,15,33776,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0030,M05,2025-05-29 07:00:00,Corrective,7,33629,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0031,M05,2025-06-22 20:00:00,Corrective,13,33765,Emergency replacement and restoration due to Proportional Valve Jam
+MAINT_0032,M06,2025-02-09 23:00:00,Corrective,18,22575,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0033,M06,2025-03-21 05:00:00,Corrective,15,21981,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0034,M06,2025-05-01 02:00:00,Corrective,18,24501,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0035,M06,2025-06-11 07:00:00,Corrective,16,20255,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0036,M07,2025-01-28 19:00:00,Corrective,10,22760,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0037,M07,2025-02-25 13:00:00,Corrective,7,20265,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0038,M07,2025-03-27 05:00:00,Corrective,18,22764,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0039,M07,2025-04-25 08:00:00,Corrective,8,21164,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0040,M07,2025-05-24 02:00:00,Corrective,13,26673,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0041,M07,2025-06-22 18:00:00,Corrective,15,26182,Emergency replacement and restoration due to Mechanical Seal Rupture
+MAINT_0042,M08,2025-02-10 14:00:00,Corrective,16,53828,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0043,M08,2025-03-23 23:00:00,Corrective,15,54755,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0044,M08,2025-05-05 13:00:00,Corrective,18,53986,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0045,M08,2025-06-17 17:00:00,Corrective,10,55456,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0046,M09,2025-02-05 02:00:00,Corrective,11,53601,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0047,M09,2025-03-13 11:00:00,Corrective,17,57905,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0048,M09,2025-04-19 14:00:00,Corrective,8,50214,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0049,M09,2025-05-26 19:00:00,Corrective,12,52783,Emergency replacement and restoration due to Stator Winding Breakdown
+MAINT_0050,M10,2025-01-18 11:00:00,Corrective,11,68340,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0051,M10,2025-02-08 02:00:00,Corrective,10,69305,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0052,M10,2025-03-03 07:00:00,Corrective,15,70016,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0053,M10,2025-03-24 09:00:00,Corrective,18,71202,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0054,M10,2025-04-13 03:00:00,Corrective,18,71202,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0055,M10,2025-05-04 02:00:00,Corrective,17,73258,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0056,M10,2025-05-24 23:00:00,Corrective,11,72314,Emergency replacement and restoration due to Screw Element Wear
+MAINT_0057,M10,2025-06-14 18:00:00,Corrective,15,73778,Emergency replacement and restoration due to Screw Element Wear

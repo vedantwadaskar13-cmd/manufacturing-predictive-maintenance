@@ -1,0 +1,11 @@
+machine_id,machine_code,machine_name,machine_type,rated_power_kw,installation_date,location_bay,status
+M01,PREC-M01,CNC Lathe 01,CNC Lathe,18.5,2022-03-15,Bay-02,Active
+M02,PREC-M02,CNC Milling 01,CNC Milling,22.0,2022-03-15,Bay-03,Active
+M03,PREC-M03,CNC Milling 02,CNC Milling,30.0,2022-03-15,Bay-01,Active
+M04,PREC-M04,Hydraulic Press 01,Hydraulic Press,45.0,2022-03-15,Bay-02,Active
+M05,PREC-M05,Hydraulic Unit 02,Hydraulic System,37.0,2022-03-15,Bay-03,Active
+M06,PREC-M06,Coolant Pump 01,Pump,7.5,2022-03-15,Bay-01,Active
+M07,PREC-M07,Slurry Pump 02,Pump,11.0,2022-03-15,Bay-02,Active
+M08,PREC-M08,Drive Motor 01,Electric Motor,55.0,2022-03-15,Bay-03,Active
+M09,PREC-M09,Drive Motor 02,Electric Motor,75.0,2022-03-15,Bay-01,Active
+M10,PREC-M10,Screw Compressor 01,Compressor,90.0,2022-03-15,Bay-02,Active

@@ -1,0 +1,58 @@
+failure_id,machine_id,failure_timestamp,failure_type,severity,downtime_hours,repair_cost,root_cause
+FAIL_0001,M01,2025-02-02 02:00:00,Spindle Bearing Seizure,CRITICAL,17,44482,Mechanical Wear
+FAIL_0002,M01,2025-03-04 10:00:00,Spindle Bearing Seizure,HIGH,11,40828,Mechanical Wear
+FAIL_0003,M01,2025-04-04 14:00:00,Spindle Bearing Seizure,CRITICAL,14,43118,Mechanical Wear
+FAIL_0004,M01,2025-05-04 00:00:00,Spindle Bearing Seizure,CRITICAL,13,38258,Mechanical Wear
+FAIL_0005,M01,2025-06-04 04:00:00,Spindle Bearing Seizure,HIGH,9,38117,Mechanical Wear
+FAIL_0006,M02,2025-01-28 20:00:00,Tool Holder Fatigue,CRITICAL,13,51184,High Dynamic Load
+FAIL_0007,M02,2025-02-26 00:00:00,Tool Holder Fatigue,CRITICAL,18,45135,High Dynamic Load
+FAIL_0008,M02,2025-03-25 08:00:00,Tool Holder Fatigue,CRITICAL,15,44285,High Dynamic Load
+FAIL_0009,M02,2025-04-23 05:00:00,Tool Holder Fatigue,HIGH,6,46784,High Dynamic Load
+FAIL_0010,M02,2025-05-20 19:00:00,Tool Holder Fatigue,CRITICAL,16,49111,High Dynamic Load
+FAIL_0011,M02,2025-06-17 23:00:00,Tool Holder Fatigue,CRITICAL,15,50949,High Dynamic Load
+FAIL_0012,M03,2025-02-02 11:00:00,Tool Holder Fatigue,CRITICAL,13,46883,High Dynamic Load
+FAIL_0013,M03,2025-03-06 14:00:00,Tool Holder Fatigue,HIGH,11,51781,High Dynamic Load
+FAIL_0014,M03,2025-04-06 12:00:00,Tool Holder Fatigue,HIGH,7,51109,High Dynamic Load
+FAIL_0015,M03,2025-05-07 15:00:00,Tool Holder Fatigue,HIGH,8,44117,High Dynamic Load
+FAIL_0016,M03,2025-06-09 15:00:00,Tool Holder Fatigue,HIGH,11,51626,High Dynamic Load
+FAIL_0017,M04,2025-01-22 09:00:00,Main Cylinder Seal Failure,CRITICAL,13,67448,Hydraulic Overpressure
+FAIL_0018,M04,2025-02-12 12:00:00,Main Cylinder Seal Failure,CRITICAL,18,67736,Hydraulic Overpressure
+FAIL_0019,M04,2025-03-06 07:00:00,Main Cylinder Seal Failure,CRITICAL,16,62140,Hydraulic Overpressure
+FAIL_0020,M04,2025-03-27 15:00:00,Main Cylinder Seal Failure,HIGH,8,65554,Hydraulic Overpressure
+FAIL_0021,M04,2025-04-18 23:00:00,Main Cylinder Seal Failure,HIGH,7,61103,Hydraulic Overpressure
+FAIL_0022,M04,2025-05-11 03:00:00,Main Cylinder Seal Failure,HIGH,10,62241,Hydraulic Overpressure
+FAIL_0023,M04,2025-06-02 16:00:00,Main Cylinder Seal Failure,HIGH,7,65178,Hydraulic Overpressure
+FAIL_0024,M04,2025-06-25 23:00:00,Main Cylinder Seal Failure,HIGH,9,62011,Hydraulic Overpressure
+FAIL_0025,M05,2025-01-24 02:00:00,Proportional Valve Jam,HIGH,8,38456,Fluid Contamination
+FAIL_0026,M05,2025-02-17 12:00:00,Proportional Valve Jam,CRITICAL,13,38379,Fluid Contamination
+FAIL_0027,M05,2025-03-13 11:00:00,Proportional Valve Jam,HIGH,11,38128,Fluid Contamination
+FAIL_0028,M05,2025-04-09 07:00:00,Proportional Valve Jam,CRITICAL,14,34799,Fluid Contamination
+FAIL_0029,M05,2025-05-04 09:00:00,Proportional Valve Jam,CRITICAL,15,33776,Fluid Contamination
+FAIL_0030,M05,2025-05-29 07:00:00,Proportional Valve Jam,HIGH,7,33629,Fluid Contamination
+FAIL_0031,M05,2025-06-22 20:00:00,Proportional Valve Jam,CRITICAL,13,33765,Fluid Contamination
+FAIL_0032,M06,2025-02-09 23:00:00,Mechanical Seal Rupture,CRITICAL,18,22575,Impeller Cavitation
+FAIL_0033,M06,2025-03-21 05:00:00,Mechanical Seal Rupture,CRITICAL,15,21981,Impeller Cavitation
+FAIL_0034,M06,2025-05-01 02:00:00,Mechanical Seal Rupture,CRITICAL,18,24501,Impeller Cavitation
+FAIL_0035,M06,2025-06-11 07:00:00,Mechanical Seal Rupture,CRITICAL,16,20255,Impeller Cavitation
+FAIL_0036,M07,2025-01-28 19:00:00,Mechanical Seal Rupture,HIGH,10,22760,Impeller Cavitation
+FAIL_0037,M07,2025-02-25 13:00:00,Mechanical Seal Rupture,HIGH,7,20265,Impeller Cavitation
+FAIL_0038,M07,2025-03-27 05:00:00,Mechanical Seal Rupture,CRITICAL,18,22764,Impeller Cavitation
+FAIL_0039,M07,2025-04-25 08:00:00,Mechanical Seal Rupture,HIGH,8,21164,Impeller Cavitation
+FAIL_0040,M07,2025-05-24 02:00:00,Mechanical Seal Rupture,CRITICAL,13,26673,Impeller Cavitation
+FAIL_0041,M07,2025-06-22 18:00:00,Mechanical Seal Rupture,CRITICAL,15,26182,Impeller Cavitation
+FAIL_0042,M08,2025-02-10 14:00:00,Stator Winding Breakdown,CRITICAL,16,53828,Thermal Degradation
+FAIL_0043,M08,2025-03-23 23:00:00,Stator Winding Breakdown,CRITICAL,15,54755,Thermal Degradation
+FAIL_0044,M08,2025-05-05 13:00:00,Stator Winding Breakdown,CRITICAL,18,53986,Thermal Degradation
+FAIL_0045,M08,2025-06-17 17:00:00,Stator Winding Breakdown,HIGH,10,55456,Thermal Degradation
+FAIL_0046,M09,2025-02-05 02:00:00,Stator Winding Breakdown,HIGH,11,53601,Thermal Degradation
+FAIL_0047,M09,2025-03-13 11:00:00,Stator Winding Breakdown,CRITICAL,17,57905,Thermal Degradation
+FAIL_0048,M09,2025-04-19 14:00:00,Stator Winding Breakdown,HIGH,8,50214,Thermal Degradation
+FAIL_0049,M09,2025-05-26 19:00:00,Stator Winding Breakdown,HIGH,12,52783,Thermal Degradation
+FAIL_0050,M10,2025-01-18 11:00:00,Screw Element Wear,HIGH,11,68340,Lubrication Breakdown
+FAIL_0051,M10,2025-02-08 02:00:00,Screw Element Wear,HIGH,10,69305,Lubrication Breakdown
+FAIL_0052,M10,2025-03-03 07:00:00,Screw Element Wear,CRITICAL,15,70016,Lubrication Breakdown
+FAIL_0053,M10,2025-03-24 09:00:00,Screw Element Wear,CRITICAL,18,71202,Lubrication Breakdown
+FAIL_0054,M10,2025-04-13 03:00:00,Screw Element Wear,CRITICAL,18,71202,Lubrication Breakdown
+FAIL_0055,M10,2025-05-04 02:00:00,Screw Element Wear,CRITICAL,17,73258,Lubrication Breakdown
+FAIL_0056,M10,2025-05-24 23:00:00,Screw Element Wear,HIGH,11,72314,Lubrication Breakdown
+FAIL_0057,M10,2025-06-14 18:00:00,Screw Element Wear,CRITICAL,15,73778,Lubrication Breakdown

@@ -1,0 +1,5 @@
+model_name,threshold,pr_auc,roc_auc,f1_score,precision,recall,brier_score,false_positives,false_negatives,total_financial_loss_inr
+Logistic Regression,0.297,0.7889,0.994,0.6575,0.4898,1.0,0.0153,250,0,625000.0
+Random Forest,0.248,0.7225,0.9924,0.7132,0.5543,1.0,0.0128,193,0,482500.0
+XGBoost,0.188,0.7503,0.9929,0.6906,0.5275,1.0,0.0138,215,0,537500.0
+LightGBM,0.297,0.7459,0.9921,0.7101,0.5505,1.0,0.0143,196,0,490000.0
