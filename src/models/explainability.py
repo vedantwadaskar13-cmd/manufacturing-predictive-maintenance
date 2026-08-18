@@ -1,7 +1,6 @@
 """
 Precision Manufacturing Plant - Explainability Engine
-Generates Global SHAP Summary, Feature Importance artifacts, and Local Explanations.
-Supports both Tree-based Ensembles and Linear Models (Logistic Regression).
+Generates Global SHAP Summary artifacts and per-machine SHAP diagnostics.
 """
 
 import os
@@ -11,13 +10,13 @@ import numpy as np
 import pandas as pd
 import shap
 import matplotlib
-matplotlib.use("Agg")  # Non-interactive backend to prevent GUI thread locks
+matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LogisticRegression
 
-# Ensure src root is accessible for imports
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.dirname(CURRENT_DIR)
+ROOT_DIR = os.path.dirname(SRC_DIR)
 if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
 
@@ -26,21 +25,21 @@ try:
 except ModuleNotFoundError:
     from trainer import load_feature_splits
 
-MODELS_DIR = os.path.join(os.path.dirname(SRC_DIR), "models")
-REPORTS_DIR = os.path.join(os.path.dirname(SRC_DIR), "reports", "figures")
+MODELS_DIR = os.path.join(ROOT_DIR, "models")
+DATA_PROCESSED_DIR = os.path.join(ROOT_DIR, "data", "processed")
+REPORTS_DIR = os.path.join(ROOT_DIR, "reports", "figures")
 os.makedirs(REPORTS_DIR, exist_ok=True)
+os.makedirs(DATA_PROCESSED_DIR, exist_ok=True)
 
 
 class IndustrialExplainabilityEngine:
     def __init__(self):
-        # 1. Load trained pipeline artifacts
         model_path = os.path.join(MODELS_DIR, "best_failure_model.joblib")
         if not os.path.exists(model_path):
-            raise FileNotFoundError(f"Model artifact not found at {model_path}. Run trainer.py first.")
+            raise FileNotFoundError(f"Model artifact not found at {model_path}.")
         
         self.model = joblib.load(model_path)
         
-        # 2. Ingest feature splits
         (
             self.feature_cols, self.scaler,
             self.X_train, self.y_train, self.X_train_s,
@@ -48,7 +47,6 @@ class IndustrialExplainabilityEngine:
             self.X_test, self.y_test, self.X_test_s
         ) = load_feature_splits()
 
-        # 3. Unwrap base estimator from CalibratedClassifierCV wrapper
         if hasattr(self.model, "estimator"):
             self.base_estimator = self.model.estimator
         elif hasattr(self.model, "calibrated_classifiers_"):
@@ -56,9 +54,7 @@ class IndustrialExplainabilityEngine:
         else:
             self.base_estimator = self.model
 
-        # 4. Route explainer based on underlying model architecture
         if isinstance(self.base_estimator, LogisticRegression):
-            # Sample background to keep linear masker fast
             background = shap.sample(self.X_train_s, min(100, len(self.X_train_s)))
             self.explainer = shap.LinearExplainer(self.base_estimator, background)
             self.eval_data = self.X_test_s
@@ -69,13 +65,10 @@ class IndustrialExplainabilityEngine:
             self.is_linear = False
 
     def compute_shap_values(self, X=None):
-        """Computes SHAP values and handles binary classification dimensions."""
         data_to_explain = self.eval_data if X is None else X
-        
         explanation = self.explainer(data_to_explain)
         raw_values = explanation.values
 
-        # If shape is (N, Features, 2), slice out positive failure class (idx 1)
         if len(raw_values.shape) == 3 and raw_values.shape[2] == 2:
             shap_matrix = raw_values[:, :, 1]
         else:
@@ -83,106 +76,64 @@ class IndustrialExplainabilityEngine:
 
         return explanation, shap_matrix
 
-    def get_local_machine_attribution(
-        self, 
-        machine_id: str, 
-        df_features: pd.DataFrame, 
-        top_n: int = 4
-    ) -> Dict[str, Any]:
-        """
-        Extracts local root-cause breakdown for the latest telemetry reading of a specific machine.
-        """
-        latest_row = df_features[df_features["machine_id"] == machine_id].sort_values("timestamp").iloc[-1:]
-        if latest_row.empty:
-            raise ValueError(f"Machine ID {machine_id} not found in feature dataset.")
-
-        X_latest = latest_row[self.feature_cols]
-        shap_exp, shap_vals = self.compute_shap_values(X_latest)
-        
-        # Feature attributions for the single row
-        row_shap = shap_vals[0]
-        row_feat_vals = X_latest.iloc[0].values
-
-        # Sort features by absolute contribution
-        sorted_indices = np.argsort(np.abs(row_shap))[::-1]
-        
-        top_drivers = []
-        for idx in sorted_indices[:top_n]:
-            col_name = self.feature_cols[idx]
-            top_drivers.append({
-                "feature": col_name,
-                "feature_value": round(float(row_feat_vals[idx]), 3),
-                "shap_attribution": round(float(row_shap[idx]), 4),
-                "direction": "Risk Increasing" if row_shap[idx] > 0 else "Risk Reducing"
-            })
-
-        base_val = float(self.explainer.expected_value[1] if isinstance(self.explainer.expected_value, (list, np.ndarray)) else self.explainer.expected_value)
-        model_output = float(base_val + np.sum(row_shap))
-
-        return {
-            "machine_id": machine_id,
-            "timestamp": str(latest_row["timestamp"].values[0]),
-            "base_expected_value": round(base_val, 4),
-            "model_prediction_margin": round(model_output, 4),
-            "top_drivers": top_drivers,
-            "shap_explanation_object": shap_exp[0]
-        }
-
 
 def generate_global_shap_artifacts():
-    print("[1/4] Initializing Explainability Engine & Ingesting Splits...")
+    print("[1/4] Initializing Explainability Engine...")
     engine = IndustrialExplainabilityEngine()
 
-    print("[2/4] Computing SHAP Explanation Matrix on Test Holdout...")
-    # Subsample test set for faster plotting if large
-    n_samples = min(500, len(engine.eval_data))
-    eval_subset = engine.eval_data[:n_samples]
-    
-    explanation, shap_vals = engine.compute_shap_values(eval_subset)
+    print("[2/4] Computing Global SHAP values...")
+    eval_data = engine.eval_data
+    explanation, shap_vals = engine.compute_shap_values(eval_data)
 
-    print("[3/4] Generating Global Summary and Importance Plots...")
-    # 1. Beeswarm / Summary Plot
+    # 1. Summary Plot
     plt.figure(figsize=(12, 8))
-    shap.summary_plot(
-        shap_vals, 
-        eval_subset, 
-        feature_names=engine.feature_cols, 
-        show=False
-    )
-    summary_plot_path = os.path.join(REPORTS_DIR, "shap_summary_plot.png")
+    shap.summary_plot(shap_vals, eval_data, feature_names=engine.feature_cols, show=False)
     plt.tight_layout()
-    plt.savefig(summary_plot_path, dpi=300, bbox_inches="tight")
+    plt.savefig(os.path.join(REPORTS_DIR, "shap_summary_plot.png"), dpi=300, bbox_inches="tight")
     plt.close()
 
-    # 2. Bar Importance Plot
+    # 2. Bar Importance
     plt.figure(figsize=(12, 8))
-    shap.summary_plot(
-        shap_vals, 
-        eval_subset, 
-        feature_names=engine.feature_cols, 
-        plot_type="bar", 
-        show=False
-    )
-    bar_plot_path = os.path.join(REPORTS_DIR, "shap_feature_importance.png")
+    shap.summary_plot(shap_vals, eval_data, feature_names=engine.feature_cols, plot_type="bar", show=False)
     plt.tight_layout()
-    plt.savefig(bar_plot_path, dpi=300, bbox_inches="tight")
+    plt.savefig(os.path.join(REPORTS_DIR, "shap_feature_importance.png"), dpi=300, bbox_inches="tight")
     plt.close()
 
-    # 3. Export Mean Absolute SHAP Importance to CSV
+    # 3. Export Mean Importance CSV
     mean_abs_shap = np.mean(np.abs(shap_vals), axis=0)
     df_importance = pd.DataFrame({
         "feature": engine.feature_cols,
         "mean_abs_shap": mean_abs_shap
     }).sort_values(by="mean_abs_shap", ascending=False)
+    df_importance.to_csv(os.path.join(MODELS_DIR, "feature_importance_shap.csv"), index=False)
+
+    # 4. Generate & Save per-machine diagnostics parquet
+    print("[3/4] Generating machine-level SHAP diagnostics table...")
+    shap_cols = [f"shap_{col}" for col in engine.feature_cols]
+    df_shap_values = pd.DataFrame(shap_vals, columns=shap_cols)
+
+    # 1. Add machine_id (from test set index/features if available, else sequential)
+    if hasattr(engine.X_test, "index"):
+        df_shap_values["machine_id"] = engine.X_test.index.values
+    else:
+        df_shap_values["machine_id"] = np.arange(len(df_shap_values))
+
+    # 2. Add top root cause drivers
+    top_driver_indices = np.argmax(np.abs(shap_vals), axis=1)
+    df_shap_values["top_root_cause_drivers"] = [engine.feature_cols[i] for i in top_driver_indices]
+    df_shap_values["primary_failure_driver"] = df_shap_values["top_root_cause_drivers"]
     
-    importance_csv_path = os.path.join(MODELS_DIR, "feature_importance_shap.csv")
-    df_importance.to_csv(importance_csv_path, index=False)
+    # 3. Model metrics & actuals
+    eval_features = engine.X_test_s if engine.is_linear else engine.X_test
+    df_shap_values["failure_probability"] = engine.model.predict_proba(eval_features)[:, 1]
+    df_shap_values["actual_failure"] = np.asarray(engine.y_test).ravel()
 
-    print("[4/4] Artifacts successfully serialized:")
-    print(f"  -> Summary Plot:     {summary_plot_path}")
-    print(f"  -> Feature Bar Plot: {bar_plot_path}")
-    print(f"  -> Importance CSV:   {importance_csv_path}")
+    # Cost-weighted risk categorization (FN=₹65,000, FP=₹2,500)
+    df_shap_values["risk_category"] = pd.cut(
+        df_shap_values["failure_probability"],
+        bins=[-np.inf, 0.30, 0.70, np.inf],
+        labels=["Low", "Medium", "Critical"]
+    )
 
-
-if __name__ == "__main__":
-    generate_global_shap_artifacts()
+    diag_path = os.path.join(DATA_PROCESSED_DIR, "machine_shap_diagnostics.parquet")
+    df_shap_values.to_parquet(diag_path, index=False)

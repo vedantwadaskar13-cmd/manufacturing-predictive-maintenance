@@ -1,0 +1,58 @@
+downtime_id,machine_id,failure_id,start_time,end_time,duration_minutes,downtime_type,reason,planned_flag,Date
+DT_0001,M01,FAIL_0001,2025-02-02 02:00:00,2025-02-02 19:00:00,1020,Unplanned Breakdown,Catastrophic failure: Spindle Bearing Seizure,0,2025-02-02
+DT_0002,M01,FAIL_0002,2025-03-04 10:00:00,2025-03-04 21:00:00,660,Unplanned Breakdown,Catastrophic failure: Spindle Bearing Seizure,0,2025-03-04
+DT_0003,M01,FAIL_0003,2025-04-04 14:00:00,2025-04-05 04:00:00,840,Unplanned Breakdown,Catastrophic failure: Spindle Bearing Seizure,0,2025-04-04
+DT_0004,M01,FAIL_0004,2025-05-04 00:00:00,2025-05-04 13:00:00,780,Unplanned Breakdown,Catastrophic failure: Spindle Bearing Seizure,0,2025-05-04
+DT_0005,M01,FAIL_0005,2025-06-04 04:00:00,2025-06-04 13:00:00,540,Unplanned Breakdown,Catastrophic failure: Spindle Bearing Seizure,0,2025-06-04
+DT_0006,M02,FAIL_0006,2025-01-28 20:00:00,2025-01-29 09:00:00,780,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-01-28
+DT_0007,M02,FAIL_0007,2025-02-26 00:00:00,2025-02-26 18:00:00,1080,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-02-26
+DT_0008,M02,FAIL_0008,2025-03-25 08:00:00,2025-03-25 23:00:00,900,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-03-25
+DT_0009,M02,FAIL_0009,2025-04-23 05:00:00,2025-04-23 11:00:00,360,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-04-23
+DT_0010,M02,FAIL_0010,2025-05-20 19:00:00,2025-05-21 11:00:00,960,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-05-20
+DT_0011,M02,FAIL_0011,2025-06-17 23:00:00,2025-06-18 14:00:00,900,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-06-17
+DT_0012,M03,FAIL_0012,2025-02-02 11:00:00,2025-02-03 00:00:00,780,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-02-02
+DT_0013,M03,FAIL_0013,2025-03-06 14:00:00,2025-03-07 01:00:00,660,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-03-06
+DT_0014,M03,FAIL_0014,2025-04-06 12:00:00,2025-04-06 19:00:00,420,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-04-06
+DT_0015,M03,FAIL_0015,2025-05-07 15:00:00,2025-05-07 23:00:00,480,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-05-07
+DT_0016,M03,FAIL_0016,2025-06-09 15:00:00,2025-06-10 02:00:00,660,Unplanned Breakdown,Catastrophic failure: Tool Holder Fatigue,0,2025-06-09
+DT_0017,M04,FAIL_0017,2025-01-22 09:00:00,2025-01-22 22:00:00,780,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-01-22
+DT_0018,M04,FAIL_0018,2025-02-12 12:00:00,2025-02-13 06:00:00,1080,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-02-12
+DT_0019,M04,FAIL_0019,2025-03-06 07:00:00,2025-03-06 23:00:00,960,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-03-06
+DT_0020,M04,FAIL_0020,2025-03-27 15:00:00,2025-03-27 23:00:00,480,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-03-27
+DT_0021,M04,FAIL_0021,2025-04-18 23:00:00,2025-04-19 06:00:00,420,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-04-18
+DT_0022,M04,FAIL_0022,2025-05-11 03:00:00,2025-05-11 13:00:00,600,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-05-11
+DT_0023,M04,FAIL_0023,2025-06-02 16:00:00,2025-06-02 23:00:00,420,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-06-02
+DT_0024,M04,FAIL_0024,2025-06-25 23:00:00,2025-06-26 08:00:00,540,Unplanned Breakdown,Catastrophic failure: Main Cylinder Seal Failure,0,2025-06-25
+DT_0025,M05,FAIL_0025,2025-01-24 02:00:00,2025-01-24 10:00:00,480,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-01-24
+DT_0026,M05,FAIL_0026,2025-02-17 12:00:00,2025-02-18 01:00:00,780,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-02-17
+DT_0027,M05,FAIL_0027,2025-03-13 11:00:00,2025-03-13 22:00:00,660,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-03-13
+DT_0028,M05,FAIL_0028,2025-04-09 07:00:00,2025-04-09 21:00:00,840,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-04-09
+DT_0029,M05,FAIL_0029,2025-05-04 09:00:00,2025-05-05 00:00:00,900,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-05-04
+DT_0030,M05,FAIL_0030,2025-05-29 07:00:00,2025-05-29 14:00:00,420,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-05-29
+DT_0031,M05,FAIL_0031,2025-06-22 20:00:00,2025-06-23 09:00:00,780,Unplanned Breakdown,Catastrophic failure: Proportional Valve Jam,0,2025-06-22
+DT_0032,M06,FAIL_0032,2025-02-09 23:00:00,2025-02-10 17:00:00,1080,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-02-09
+DT_0033,M06,FAIL_0033,2025-03-21 05:00:00,2025-03-21 20:00:00,900,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-03-21
+DT_0034,M06,FAIL_0034,2025-05-01 02:00:00,2025-05-01 20:00:00,1080,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-05-01
+DT_0035,M06,FAIL_0035,2025-06-11 07:00:00,2025-06-11 23:00:00,960,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-06-11
+DT_0036,M07,FAIL_0036,2025-01-28 19:00:00,2025-01-29 05:00:00,600,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-01-28
+DT_0037,M07,FAIL_0037,2025-02-25 13:00:00,2025-02-25 20:00:00,420,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-02-25
+DT_0038,M07,FAIL_0038,2025-03-27 05:00:00,2025-03-27 23:00:00,1080,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-03-27
+DT_0039,M07,FAIL_0039,2025-04-25 08:00:00,2025-04-25 16:00:00,480,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-04-25
+DT_0040,M07,FAIL_0040,2025-05-24 02:00:00,2025-05-24 15:00:00,780,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-05-24
+DT_0041,M07,FAIL_0041,2025-06-22 18:00:00,2025-06-23 09:00:00,900,Unplanned Breakdown,Catastrophic failure: Mechanical Seal Rupture,0,2025-06-22
+DT_0042,M08,FAIL_0042,2025-02-10 14:00:00,2025-02-11 06:00:00,960,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-02-10
+DT_0043,M08,FAIL_0043,2025-03-23 23:00:00,2025-03-24 14:00:00,900,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-03-23
+DT_0044,M08,FAIL_0044,2025-05-05 13:00:00,2025-05-06 07:00:00,1080,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-05-05
+DT_0045,M08,FAIL_0045,2025-06-17 17:00:00,2025-06-18 03:00:00,600,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-06-17
+DT_0046,M09,FAIL_0046,2025-02-05 02:00:00,2025-02-05 13:00:00,660,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-02-05
+DT_0047,M09,FAIL_0047,2025-03-13 11:00:00,2025-03-14 04:00:00,1020,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-03-13
+DT_0048,M09,FAIL_0048,2025-04-19 14:00:00,2025-04-19 22:00:00,480,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-04-19
+DT_0049,M09,FAIL_0049,2025-05-26 19:00:00,2025-05-27 07:00:00,720,Unplanned Breakdown,Catastrophic failure: Stator Winding Breakdown,0,2025-05-26
+DT_0050,M10,FAIL_0050,2025-01-18 11:00:00,2025-01-18 22:00:00,660,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-01-18
+DT_0051,M10,FAIL_0051,2025-02-08 02:00:00,2025-02-08 12:00:00,600,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-02-08
+DT_0052,M10,FAIL_0052,2025-03-03 07:00:00,2025-03-03 22:00:00,900,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-03-03
+DT_0053,M10,FAIL_0053,2025-03-24 09:00:00,2025-03-25 03:00:00,1080,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-03-24
+DT_0054,M10,FAIL_0054,2025-04-13 03:00:00,2025-04-13 21:00:00,1080,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-04-13
+DT_0055,M10,FAIL_0055,2025-05-04 02:00:00,2025-05-04 19:00:00,1020,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-05-04
+DT_0056,M10,FAIL_0056,2025-05-24 23:00:00,2025-05-25 10:00:00,660,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-05-24
+DT_0057,M10,FAIL_0057,2025-06-14 18:00:00,2025-06-15 09:00:00,900,Unplanned Breakdown,Catastrophic failure: Screw Element Wear,0,2025-06-14
